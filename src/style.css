@@ -7,7 +7,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   overflow: hidden; 
-  animation: backgroundTransition 0.5s ease-in-out forwards;
+  animation: backgroundTransition 1s ease-in-out forwards;
 }
 
 @keyframes backgroundTransition {
