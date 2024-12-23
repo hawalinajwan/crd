@@ -17,7 +17,7 @@
                     <a href="https://github.com/hawalinajwan"><i class="fab fa-github"></i></a>
                     <a href="https://discord.com/users/644892716953632768"><i class="fab fa-discord"></i></a>
                 </div>
-                <a href="https://hawalinajwan.site" class="website-button">My website</a>
+                <a href="https://hanamara.site" class="website-button">My website</a>
             </div>
             <img src="./assets/raul.svg" alt="Character" class="character-image">
             <div class="hills-wrapper">

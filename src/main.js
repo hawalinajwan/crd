@@ -1,12 +1,12 @@
 // main.js
-import { createApp, ref } from 'vue'
+import { createApp, ref, onMounted, watch } from 'vue'
 import './style.css'
 import App from './App.vue'
 
 const clientId = '4f61f26d20054006b889a18346fdfe44';
-const redirectUri = 'https://hanacard.vercel.app/callback'; // Updated to production URL
+const redirectUri = 'http://localhost:5173/callback';
 const scopes = 'user-read-currently-playing';
-let currentTrackId = ref('');
+let currentTrackId = ref(''); 
 
 createApp(App).mount('#app')
 
@@ -74,7 +74,7 @@ async function displaySpotifyActivity() {
                 const duration = activity.item.duration_ms;
 
                 if (trackId !== currentTrackId.value) {
-                    currentTrackId.value = trackId;
+                    currentTrackId.value = trackId; // Update reactive ref
                     document.getElementById('album-cover').src = albumImage;
                     document.getElementById('song-title').textContent = song;
                     document.getElementById('artist-name').textContent = artist;
@@ -85,7 +85,7 @@ async function displaySpotifyActivity() {
                 document.getElementById('song-title').textContent = 'Tidak ada musik yang sedang diputar.';
                 document.getElementById('artist-name').textContent = '';
                 document.getElementById('album-name').textContent = '';
-                currentTrackId.value = '';
+                currentTrackId.value = ''; // Reset reactive ref
                 document.getElementById('progress-bar').style.width = '0%';
             }
         } catch (error) {
@@ -97,5 +97,5 @@ async function displaySpotifyActivity() {
     }
 }
 
-setInterval(displaySpotifyActivity, 60000); // Polling setiap 60 detik
+setInterval(displaySpotifyActivity, 60000); 
 displaySpotifyActivity();
